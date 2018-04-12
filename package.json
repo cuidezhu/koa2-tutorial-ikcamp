@@ -2,7 +2,7 @@
   "name": "koa2-tutorial-ikcamp",
   "version": "1.0.0",
   "description": "",
-  "main": "index.js",
+  "main": "app.js",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1"
   },
@@ -18,5 +18,8 @@
   "bugs": {
     "url": "https://github.com/cuidezhu/koa2-tutorial-ikcamp/issues"
   },
-  "homepage": "https://github.com/cuidezhu/koa2-tutorial-ikcamp#readme"
+  "homepage": "https://github.com/cuidezhu/koa2-tutorial-ikcamp#readme",
+  "dependencies": {
+    "koa": "^2.5.0"
+  }
 }
