@@ -1,6 +1,22 @@
 {
-  "name": "koa2-tutorial",
+  "name": "koa2-tutorial-ikcamp",
   "version": "1.0.0",
   "description": "",
-  "main": "app.js",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/cuidezhu/koa2-tutorial-ikcamp.git"
+  },
+  "keywords": [
+    "koa2"
+  ],
+  "author": "cuidezhu",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/cuidezhu/koa2-tutorial-ikcamp/issues"
+  },
+  "homepage": "https://github.com/cuidezhu/koa2-tutorial-ikcamp#readme"
 }
