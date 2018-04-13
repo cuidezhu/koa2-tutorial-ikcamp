@@ -21,6 +21,7 @@
   "homepage": "https://github.com/cuidezhu/koa2-tutorial-ikcamp#readme",
   "dependencies": {
     "koa": "^2.5.0",
+    "koa-bodyparser": "^4.2.0",
     "koa-router": "^7.4.0"
   }
 }
