@@ -2,13 +2,13 @@
 * @Author: cuidezhu
 * @Date:   2018-04-13 16:41:22
 * @Last Modified by:   cuidezhu
-* @Last Modified time: 2018-04-13 18:06:05
+* @Last Modified time: 2018-04-14 17:18:54
 */
 const HomeService = require('../service/home')
 
 module.exports = {
-  index: async(ctx, next) => {
-    ctx.response.body = `<h1>index page</h1>`
+  index: async function(ctx, next) {
+    await ctx.render("home/index", {title: "iKcamp欢迎您"})
   },
   home: async(ctx, next) => {
     console.log(ctx.request.query)
@@ -24,12 +24,16 @@ module.exports = {
       btnName: 'GoGoGo'
     })
   },
-  register: async(ctx, next) => {
-    let {
-      name,
-      password
-    } = ctx.request.body
-    let data = await HomeService.register(name, password)
-    ctx.response.body = data
+  register: async function(ctx, next) {
+    let params = ctx.request.body
+    let name = params.name
+    let password = params.password
+    let res = await HomeService.register(name, password)
+    if (res.status == "-1") {
+      await ctx.render("home/login", res.data)
+    } else {
+      ctx.status.title = "个人中心"
+      await ctx.render("home/success", res.data)
+    }
   }
 }
