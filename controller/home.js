@@ -2,7 +2,7 @@
 * @Author: cuidezhu
 * @Date:   2018-04-13 16:41:22
 * @Last Modified by:   cuidezhu
-* @Last Modified time: 2018-04-14 17:18:54
+* @Last Modified time: 2018-04-15 00:32:38
 */
 const HomeService = require('../service/home')
 
@@ -11,9 +11,8 @@ module.exports = {
     await ctx.render("home/index", {title: "iKcamp欢迎您"})
   },
   home: async(ctx, next) => {
-    console.log(ctx.request.query)
-    console.log(ctx.request.querystring)
-    ctx.response.body = '<h1>HOME page</h1>'
+    ctx.send({status: '200'})
+    //ctx.response.body = '<h1>HOME page</h1>'
   },
   homeParams: async(ctx, next) => {
     console.log(ctx.params)
