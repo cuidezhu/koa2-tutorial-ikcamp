@@ -2,7 +2,7 @@
 * @Author: cuidezhu
 * @Date:   2018-04-15 00:24:30
 * @Last Modified by:   cuidezhu
-* @Last Modified time: 2018-04-15 00:26:08
+* @Last Modified time: 2018-04-15 17:20:15
 */
 
 module.exports = () => {
@@ -12,6 +12,7 @@ module.exports = () => {
   }
   return async(ctx, next) => {
     ctx.send = render.bind(ctx)
+    ctx.log.error('something wrong')
     await next()
   }
 }
