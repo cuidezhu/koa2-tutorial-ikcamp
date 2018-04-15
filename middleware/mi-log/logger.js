@@ -2,7 +2,7 @@
 * @Author: cuidezhu
 * @Date:   2018-04-15 15:48:42
 * @Last Modified by:   cuidezhu
-* @Last Modified time: 2018-04-15 19:07:01
+* @Last Modified time: 2018-04-15 19:27:22
 */
 const log4js = require('log4js')
 const access = require('./access.js')
@@ -15,7 +15,8 @@ module.exports = (options) => {
     dir: "logs",
     appLogLevel: 'info'
   }
-  const { env, dir, appLogLevel } = defaultInfo
+  const opts = Object.assign({}, defaultInfo, options || {})
+  const { env, dir, appLogLevel } = opts
   const commonInfo = { }
   const appenders = { cheese: {
     type: 'dateFile',
