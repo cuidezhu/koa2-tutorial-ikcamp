@@ -2,7 +2,7 @@
 * @Author: cuidezhu
 * @Date:   2018-04-15 00:28:44
 * @Last Modified by:   cuidezhu
-* @Last Modified time: 2018-04-16 08:01:13
+* @Last Modified time: 2018-04-16 08:31:37
 */
 const path = require('path')
 const ip = require('ip')
@@ -13,8 +13,22 @@ const staticFiles = require('koa-static')
 const miSend = require('./mi-send')
 const miLog = require('./mi-log')
 const miHttpError = require('./mi-http-error')
+const miRule = require('./mi-rule')
 
 module.exports = (app) => {
+  miRule({
+    app,
+    rules: [
+      {
+        folder: path.join(__dirname, '../controller'),
+        name: 'controller'
+      },
+      {
+        folder: path.join(__dirname, '../service'),
+        name: 'service'
+      }
+    ]
+  })
   app.use(miHttpError({
     errorPageFolder: path.resolve(__dirname, '../errorPage')
   }))
